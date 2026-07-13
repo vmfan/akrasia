@@ -1,0 +1,289 @@
+{
+  "overall_pass": true,
+  "results": {
+    "GPT-5.5": {
+      "name": "GPT-5.5",
+      "byte_identical": false,
+      "distinct_hashes": 2,
+      "n": 8,
+      "n_valid": 8,
+      "max_belief_spread": 1.000000082740371e-10,
+      "action_stable": true,
+      "distinct_actions": [
+        "Action(spread='wide', size=1)"
+      ],
+      "reps": [
+        {
+          "seed": 42,
+          "output_hash": "22433fccb9d6ed83",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 939,
+          "output_tokens": 61,
+          "latency_ms": 2226.151790935546,
+          "valid": true,
+          "belief_v": [
+            0.3333333333,
+            0.3333333334,
+            0.3333333333
+          ],
+          "action": "Action(spread='wide', size=1)"
+        },
+        {
+          "seed": 42,
+          "output_hash": "c1efa9be485028ca",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 939,
+          "output_tokens": 61,
+          "latency_ms": 1504.0209998842329,
+          "valid": true,
+          "belief_v": [
+            0.3333333333,
+            0.3333333333,
+            0.3333333333
+          ],
+          "action": "Action(spread='wide', size=1)"
+        },
+        {
+          "seed": 42,
+          "output_hash": "22433fccb9d6ed83",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 939,
+          "output_tokens": 61,
+          "latency_ms": 1542.224083095789,
+          "valid": true,
+          "belief_v": [
+            0.3333333333,
+            0.3333333334,
+            0.3333333333
+          ],
+          "action": "Action(spread='wide', size=1)"
+        },
+        {
+          "seed": 42,
+          "output_hash": "c1efa9be485028ca",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 939,
+          "output_tokens": 61,
+          "latency_ms": 2415.274834027514,
+          "valid": true,
+          "belief_v": [
+            0.3333333333,
+            0.3333333333,
+            0.3333333333
+          ],
+          "action": "Action(spread='wide', size=1)"
+        },
+        {
+          "seed": 42,
+          "output_hash": "22433fccb9d6ed83",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 939,
+          "output_tokens": 61,
+          "latency_ms": 1582.5550840236247,
+          "valid": true,
+          "belief_v": [
+            0.3333333333,
+            0.3333333334,
+            0.3333333333
+          ],
+          "action": "Action(spread='wide', size=1)"
+        },
+        {
+          "seed": 42,
+          "output_hash": "c1efa9be485028ca",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 939,
+          "output_tokens": 61,
+          "latency_ms": 1544.6201250888407,
+          "valid": true,
+          "belief_v": [
+            0.3333333333,
+            0.3333333333,
+            0.3333333333
+          ],
+          "action": "Action(spread='wide', size=1)"
+        },
+        {
+          "seed": 42,
+          "output_hash": "22433fccb9d6ed83",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 939,
+          "output_tokens": 61,
+          "latency_ms": 1519.3415828980505,
+          "valid": true,
+          "belief_v": [
+            0.3333333333,
+            0.3333333334,
+            0.3333333333
+          ],
+          "action": "Action(spread='wide', size=1)"
+        },
+        {
+          "seed": 42,
+          "output_hash": "22433fccb9d6ed83",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 939,
+          "output_tokens": 61,
+          "latency_ms": 1500.5492088384926,
+          "valid": true,
+          "belief_v": [
+            0.3333333333,
+            0.3333333334,
+            0.3333333333
+          ],
+          "action": "Action(spread='wide', size=1)"
+        }
+      ]
+    },
+    "Llama-3.3-70B-Nebius": {
+      "name": "Llama-3.3-70B-Nebius",
+      "byte_identical": true,
+      "distinct_hashes": 1,
+      "n": 8,
+      "n_valid": 8,
+      "max_belief_spread": 0.0,
+      "action_stable": true,
+      "distinct_actions": [
+        "Action(spread='tight', size=1)"
+      ],
+      "reps": [
+        {
+          "seed": 42,
+          "output_hash": "ef6b100a28bc3157",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 839,
+          "output_tokens": 61,
+          "latency_ms": 2418.285666964948,
+          "valid": true,
+          "belief_v": [
+            0.333333,
+            0.333333,
+            0.333333
+          ],
+          "action": "Action(spread='tight', size=1)"
+        },
+        {
+          "seed": 42,
+          "output_hash": "ef6b100a28bc3157",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 839,
+          "output_tokens": 61,
+          "latency_ms": 1984.462041174993,
+          "valid": true,
+          "belief_v": [
+            0.333333,
+            0.333333,
+            0.333333
+          ],
+          "action": "Action(spread='tight', size=1)"
+        },
+        {
+          "seed": 42,
+          "output_hash": "ef6b100a28bc3157",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 839,
+          "output_tokens": 61,
+          "latency_ms": 2390.3270829468966,
+          "valid": true,
+          "belief_v": [
+            0.333333,
+            0.333333,
+            0.333333
+          ],
+          "action": "Action(spread='tight', size=1)"
+        },
+        {
+          "seed": 42,
+          "output_hash": "ef6b100a28bc3157",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 839,
+          "output_tokens": 61,
+          "latency_ms": 2005.5127500090748,
+          "valid": true,
+          "belief_v": [
+            0.333333,
+            0.333333,
+            0.333333
+          ],
+          "action": "Action(spread='tight', size=1)"
+        },
+        {
+          "seed": 42,
+          "output_hash": "ef6b100a28bc3157",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 839,
+          "output_tokens": 61,
+          "latency_ms": 1897.1588748972863,
+          "valid": true,
+          "belief_v": [
+            0.333333,
+            0.333333,
+            0.333333
+          ],
+          "action": "Action(spread='tight', size=1)"
+        },
+        {
+          "seed": 42,
+          "output_hash": "ef6b100a28bc3157",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 839,
+          "output_tokens": 61,
+          "latency_ms": 1769.2301250062883,
+          "valid": true,
+          "belief_v": [
+            0.333333,
+            0.333333,
+            0.333333
+          ],
+          "action": "Action(spread='tight', size=1)"
+        },
+        {
+          "seed": 42,
+          "output_hash": "ef6b100a28bc3157",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 839,
+          "output_tokens": 61,
+          "latency_ms": 2191.6862500365824,
+          "valid": true,
+          "belief_v": [
+            0.333333,
+            0.333333,
+            0.333333
+          ],
+          "action": "Action(spread='tight', size=1)"
+        },
+        {
+          "seed": 42,
+          "output_hash": "ef6b100a28bc3157",
+          "fingerprint": null,
+          "seed_echoed": 42,
+          "input_tokens": 839,
+          "output_tokens": 61,
+          "latency_ms": 3720.1875001192093,
+          "valid": true,
+          "belief_v": [
+            0.333333,
+            0.333333,
+            0.333333
+          ],
+          "action": "Action(spread='tight', size=1)"
+        }
+      ]
+    }
+  }
+}

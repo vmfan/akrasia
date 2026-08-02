@@ -1,0 +1,26 @@
+%%{init: {'theme': 'neutral', 'flowchart': {'curve': 'linear'}}}%%
+flowchart TB
+    S["Stated belief<br/>+ chosen action"]:::belief
+
+    subgraph OA["Oracle A"]
+        direction TB
+        A1["Compute a*"]
+        A2["vs. chosen action"]
+        A1 --> A2
+    end
+
+    subgraph OB["Oracle B"]
+        direction TB
+        B1["Compute true posterior"]
+        B2["vs. stated belief"]
+        B1 --> B2
+    end
+
+    S --> A1
+    S --> B1
+
+    A2 --> EX["Execution error"]:::error
+    B2 --> ES["Estimation error"]:::error
+
+    classDef belief fill:#dde8f5,stroke:#4a6fa5,color:#222
+    classDef error fill:#f5dedd,stroke:#a5654a,color:#222

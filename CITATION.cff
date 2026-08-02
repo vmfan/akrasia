@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use akrasia in your research, please cite this repository."
+title: "akrasia"
+abstract: >-
+  A diagnostic instrument that measures whether an LLM agent acts on its own
+  stated beliefs in a minimal repeated-pricing game, using a two-oracle
+  decomposition that separates estimation error (is the stated belief correct?)
+  from execution error (does the chosen action follow from that belief?), plus a
+  no-training scaffold whose effect is measured through that instrument.
+type: software
+version: "0.1.0"
+license: MIT
+repository-code: "https://github.com/vmfan/akrasia"
+url: "https://github.com/vmfan/akrasia"
+authors:
+  - family-names: Fan
+    given-names: Vincent Marciano
+keywords:
+  - LLM agents
+  - sequential decision making
+  - knowing-doing gap
+  - belief elicitation
+  - expected-value oracle
+  - agent evaluation

@@ -1,0 +1,111 @@
+{
+  "cache_path": "results/frozen_ablation_cache.jsonl",
+  "n_episodes": 29,
+  "arm": "baseline",
+  "models": {
+    "gpt-5.5": {
+      "all_rounds": {
+        "n_total": 174,
+        "spread": {
+          "n_total": 174,
+          "n_conservative": 27,
+          "n_matched": 147,
+          "n_aggressive": 0,
+          "signed_rate": 0.15517241379310345,
+          "n_suboptimal": 27,
+          "n_conservative_of_suboptimal": 27,
+          "n_aggressive_of_suboptimal": 0,
+          "signed_rate_of_suboptimal": 1.0
+        },
+        "size": {
+          "n_total": 174,
+          "n_conservative": 95,
+          "n_matched": 79,
+          "n_aggressive": 0,
+          "signed_rate": 0.5459770114942529,
+          "n_suboptimal": 95,
+          "n_conservative_of_suboptimal": 95,
+          "n_aggressive_of_suboptimal": 0,
+          "signed_rate_of_suboptimal": 1.0
+        }
+      },
+      "evidence_bearing": {
+        "n_total": 145,
+        "spread": {
+          "n_total": 145,
+          "n_conservative": 27,
+          "n_matched": 118,
+          "n_aggressive": 0,
+          "signed_rate": 0.18620689655172415,
+          "n_suboptimal": 27,
+          "n_conservative_of_suboptimal": 27,
+          "n_aggressive_of_suboptimal": 0,
+          "signed_rate_of_suboptimal": 1.0
+        },
+        "size": {
+          "n_total": 145,
+          "n_conservative": 95,
+          "n_matched": 50,
+          "n_aggressive": 0,
+          "signed_rate": 0.6551724137931034,
+          "n_suboptimal": 95,
+          "n_conservative_of_suboptimal": 95,
+          "n_aggressive_of_suboptimal": 0,
+          "signed_rate_of_suboptimal": 1.0
+        }
+      }
+    },
+    "llama-3.3-70b-nebius": {
+      "all_rounds": {
+        "n_total": 174,
+        "spread": {
+          "n_total": 174,
+          "n_conservative": 3,
+          "n_matched": 4,
+          "n_aggressive": 167,
+          "signed_rate": -0.9425287356321839,
+          "n_suboptimal": 170,
+          "n_conservative_of_suboptimal": 3,
+          "n_aggressive_of_suboptimal": 167,
+          "signed_rate_of_suboptimal": -0.9647058823529412
+        },
+        "size": {
+          "n_total": 174,
+          "n_conservative": 36,
+          "n_matched": 88,
+          "n_aggressive": 50,
+          "signed_rate": -0.08045977011494253,
+          "n_suboptimal": 86,
+          "n_conservative_of_suboptimal": 36,
+          "n_aggressive_of_suboptimal": 50,
+          "signed_rate_of_suboptimal": -0.16279069767441862
+        }
+      },
+      "evidence_bearing": {
+        "n_total": 145,
+        "spread": {
+          "n_total": 145,
+          "n_conservative": 3,
+          "n_matched": 4,
+          "n_aggressive": 138,
+          "signed_rate": -0.9310344827586207,
+          "n_suboptimal": 141,
+          "n_conservative_of_suboptimal": 3,
+          "n_aggressive_of_suboptimal": 138,
+          "signed_rate_of_suboptimal": -0.9574468085106383
+        },
+        "size": {
+          "n_total": 145,
+          "n_conservative": 36,
+          "n_matched": 59,
+          "n_aggressive": 50,
+          "signed_rate": -0.09655172413793103,
+          "n_suboptimal": 86,
+          "n_conservative_of_suboptimal": 36,
+          "n_aggressive_of_suboptimal": 50,
+          "signed_rate_of_suboptimal": -0.16279069767441862
+        }
+      }
+    }
+  }
+}

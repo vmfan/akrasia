@@ -1,0 +1,59 @@
+{
+  "cache_path": "results/prompt_sensitivity_cache.jsonl",
+  "n_episodes": 2,
+  "variant": "B",
+  "model": "gpt-5.5",
+  "cache_misses": 12,
+  "cache_hits": 0,
+  "estimated_cost_usd": 0.0792,
+  "all_rounds": {
+    "n_total": 12,
+    "spread": {
+      "n_total": 12,
+      "n_conservative": 5,
+      "n_matched": 7,
+      "n_aggressive": 0,
+      "signed_rate": 0.4166666666666667,
+      "n_suboptimal": 5,
+      "n_conservative_of_suboptimal": 5,
+      "n_aggressive_of_suboptimal": 0,
+      "signed_rate_of_suboptimal": 1.0
+    },
+    "size": {
+      "n_total": 12,
+      "n_conservative": 4,
+      "n_matched": 8,
+      "n_aggressive": 0,
+      "signed_rate": 0.3333333333333333,
+      "n_suboptimal": 4,
+      "n_conservative_of_suboptimal": 4,
+      "n_aggressive_of_suboptimal": 0,
+      "signed_rate_of_suboptimal": 1.0
+    }
+  },
+  "evidence_bearing": {
+    "n_total": 10,
+    "spread": {
+      "n_total": 10,
+      "n_conservative": 5,
+      "n_matched": 5,
+      "n_aggressive": 0,
+      "signed_rate": 0.5,
+      "n_suboptimal": 5,
+      "n_conservative_of_suboptimal": 5,
+      "n_aggressive_of_suboptimal": 0,
+      "signed_rate_of_suboptimal": 1.0
+    },
+    "size": {
+      "n_total": 10,
+      "n_conservative": 4,
+      "n_matched": 6,
+      "n_aggressive": 0,
+      "signed_rate": 0.4,
+      "n_suboptimal": 4,
+      "n_conservative_of_suboptimal": 4,
+      "n_aggressive_of_suboptimal": 0,
+      "signed_rate_of_suboptimal": 1.0
+    }
+  }
+}

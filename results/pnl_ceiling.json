@@ -1,0 +1,171 @@
+{
+  "cache_path": "results/frozen_ablation_cache.jsonl",
+  "n_episodes": 29,
+  "horizon": 6,
+  "models": {
+    "gpt-5.5": {
+      "arms": {
+        "baseline": {
+          "n_episodes": 29,
+          "n_eligible": 29,
+          "eligibility_rate": 1.0,
+          "ceiling": 5.521719134164757,
+          "pnl_ratio_mean": 0.8180860470325976,
+          "pnl_ratio_median": 0.40748179060366974,
+          "adverse_selection_cost_mean_per_episode": 5.432758620689656,
+          "adverse_selection_cost_per_informed_fill": 2.9726415094339624,
+          "n_informed_fills_total": 53
+        },
+        "c1": {
+          "n_episodes": 29,
+          "n_eligible": 29,
+          "eligibility_rate": 1.0,
+          "ceiling": 5.521719134164757,
+          "pnl_ratio_mean": 0.9104673210279439,
+          "pnl_ratio_median": 0.5795296577474414,
+          "adverse_selection_cost_mean_per_episode": 5.072120689672413,
+          "adverse_selection_cost_per_informed_fill": 2.7753113207641507,
+          "n_informed_fills_total": 53
+        },
+        "c2": {
+          "n_episodes": 29,
+          "n_eligible": 29,
+          "eligibility_rate": 1.0,
+          "ceiling": 5.521719134164757,
+          "pnl_ratio_mean": 0.8084064029677402,
+          "pnl_ratio_median": 0.49803329962670745,
+          "adverse_selection_cost_mean_per_episode": 5.505172413793104,
+          "adverse_selection_cost_per_informed_fill": 3.0122641509433965,
+          "n_informed_fills_total": 53
+        },
+        "c1c2": {
+          "n_episodes": 29,
+          "n_eligible": 29,
+          "eligibility_rate": 1.0,
+          "ceiling": 5.521719134164757,
+          "pnl_ratio_mean": 0.909312008677688,
+          "pnl_ratio_median": 0.6881914685750866,
+          "adverse_selection_cost_mean_per_episode": 5.0951379310344835,
+          "adverse_selection_cost_per_informed_fill": 2.787905660377359,
+          "n_informed_fills_total": 53
+        },
+        "control": {
+          "n_episodes": 29,
+          "n_eligible": 29,
+          "eligibility_rate": 1.0,
+          "ceiling": 5.521719134164757,
+          "pnl_ratio_mean": 0.8396310612515463,
+          "pnl_ratio_median": 0.5885848085591937,
+          "adverse_selection_cost_mean_per_episode": 5.36551724137931,
+          "adverse_selection_cost_per_informed_fill": 2.9358490566037734,
+          "n_informed_fills_total": 53
+        },
+        "c3a": {
+          "n_episodes": 29,
+          "n_eligible": 29,
+          "eligibility_rate": 1.0,
+          "ceiling": 5.521719134164757,
+          "pnl_ratio_mean": 1.060701641897771,
+          "pnl_ratio_median": 0.5433090541382263,
+          "adverse_selection_cost_mean_per_episode": 5.791379310344827,
+          "adverse_selection_cost_per_informed_fill": 3.1688679245283016,
+          "n_informed_fills_total": 53
+        },
+        "c3b": {
+          "n_episodes": 29,
+          "n_eligible": 29,
+          "eligibility_rate": 1.0,
+          "ceiling": 5.521719134164757,
+          "pnl_ratio_mean": 0.8377286061386825,
+          "pnl_ratio_median": 0.7561051002518134,
+          "adverse_selection_cost_mean_per_episode": 5.3761520376692795,
+          "adverse_selection_cost_per_informed_fill": 2.9416680960831907,
+          "n_informed_fills_total": 53
+        }
+      },
+      "skipped_arms": []
+    },
+    "llama-3.3-70b-nebius": {
+      "arms": {
+        "baseline": {
+          "n_episodes": 29,
+          "n_eligible": 29,
+          "eligibility_rate": 1.0,
+          "ceiling": 5.521719134164757,
+          "pnl_ratio_mean": 0.7275345380126824,
+          "pnl_ratio_median": 0.9960665992534149,
+          "adverse_selection_cost_mean_per_episode": 6.827586206896552,
+          "adverse_selection_cost_per_informed_fill": 3.6,
+          "n_informed_fills_total": 55
+        },
+        "c1": {
+          "n_episodes": 29,
+          "n_eligible": 29,
+          "eligibility_rate": 1.0,
+          "ceiling": 5.521719134164757,
+          "pnl_ratio_mean": 1.063864898839681,
+          "pnl_ratio_median": 0.6497070772402956,
+          "adverse_selection_cost_mean_per_episode": 8.433262724302283,
+          "adverse_selection_cost_per_informed_fill": 4.614426773674834,
+          "n_informed_fills_total": 53
+        },
+        "c2": {
+          "n_episodes": 29,
+          "n_eligible": 29,
+          "eligibility_rate": 1.0,
+          "ceiling": 5.521719134164757,
+          "pnl_ratio_mean": 0.29975671952453864,
+          "pnl_ratio_median": 0.18110301804607543,
+          "adverse_selection_cost_mean_per_episode": 6.025862068965517,
+          "adverse_selection_cost_per_informed_fill": 3.0129310344827585,
+          "n_informed_fills_total": 58
+        },
+        "c1c2": {
+          "n_episodes": 29,
+          "n_eligible": 29,
+          "eligibility_rate": 1.0,
+          "ceiling": 5.521719134164757,
+          "pnl_ratio_mean": 0.9338358552937893,
+          "pnl_ratio_median": 0.13582726353455657,
+          "adverse_selection_cost_mean_per_episode": 6.677465517241379,
+          "adverse_selection_cost_per_informed_fill": 3.3973070175438598,
+          "n_informed_fills_total": 57
+        },
+        "control": {
+          "n_episodes": 29,
+          "n_eligible": 2,
+          "eligibility_rate": 0.06896551724137931,
+          "ceiling": 5.521719134164757,
+          "pnl_ratio_mean": 1.738588973242324,
+          "pnl_ratio_median": 6.19372321717578,
+          "adverse_selection_cost_mean_per_episode": 10.5,
+          "adverse_selection_cost_per_informed_fill": 7.0,
+          "n_informed_fills_total": 3
+        },
+        "c3a": {
+          "n_episodes": 29,
+          "n_eligible": 29,
+          "eligibility_rate": 1.0,
+          "ceiling": 5.521719134164757,
+          "pnl_ratio_mean": 0.5464315199666069,
+          "pnl_ratio_median": 0.09055150902303771,
+          "adverse_selection_cost_mean_per_episode": 7.086206896551724,
+          "adverse_selection_cost_per_informed_fill": 3.8055555555555554,
+          "n_informed_fills_total": 54
+        },
+        "c3b": {
+          "n_episodes": 29,
+          "n_eligible": 29,
+          "eligibility_rate": 1.0,
+          "ceiling": 5.521719134164757,
+          "pnl_ratio_mean": 0.794181787120892,
+          "pnl_ratio_median": 1.0068034132767933,
+          "adverse_selection_cost_mean_per_episode": 9.978955937164905,
+          "adverse_selection_cost_per_informed_fill": 5.67430827799573,
+          "n_informed_fills_total": 51
+        }
+      },
+      "skipped_arms": []
+    }
+  }
+}

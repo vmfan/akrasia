@@ -31,15 +31,22 @@ from akrasia.agent.prompts import BASE_PROMPT
 from akrasia.llm_decider import LLMDecider
 from akrasia.metrics import (
     EVIDENCE_BEARING_MIN_ROUND,
+    BeliefConsistencySummary,
     EVRealizationSummary,
+    belief_consistency_metrics,
+    belief_evidence_bearing,
     decision_metrics,
     evidence_bearing,
     summarize,
+    summarize_belief_consistency,
 )
 from akrasia.model_client import ModelClient
 from akrasia.model_client.providers import (
     gpt55,
+    gpt55_reasoning,
     gpt_5_6_sol,
+    gpt_5_6_sol_azure,
+    gpt_5_6_sol_azure_reasoning,
     llama_hkust_debug,
     llama_nebius,
 )
@@ -65,7 +72,18 @@ MODEL_FACTORIES = {
     "llama-3.3-70b-nebius": llama_nebius,
     "llama-3.3-70b-hkust-debug": llama_hkust_debug,
     "gpt-5.5": gpt55,
+    # Axis-1 reasoning-on probe: same GPT-5.5 snapshot, reasoning ON at
+    # temperature=1 (directional, NOT the frozen matrix). See reasoning_axis.py.
+    "gpt-5.5-reasoning": gpt55_reasoning,
     "gpt-5.6-sol": gpt_5_6_sol,
+    # Axis-2 top rung — same model, Azure AI Foundry serving stack (Tier 1,
+    # Japan East) instead of OpenAI direct. Different results are NOT directly
+    # comparable to "gpt-5.6-sol" above (documented confound, see config.py).
+    "gpt-5.6-sol-azure": gpt_5_6_sol_azure,
+    # Axis-1 reasoning-on probe, moved here from GPT-5.5 2026-07-21 per user
+    # directive (LOCKED_DECISIONS.md Axis 1 amendment). See reasoning_axis.py
+    # and config.py's GPT_5_6_SOL_AZURE_REASONING for caveats.
+    "gpt-5.6-sol-azure-reasoning": gpt_5_6_sol_azure_reasoning,
 }
 
 
@@ -93,6 +111,17 @@ def _summary_to_dict(summary: EVRealizationSummary) -> dict:
     }
 
 
+def _belief_summary_to_dict(summary: BeliefConsistencySummary) -> dict:
+    return {
+        "n_total": summary.n_total,
+        "n_direction_defined": summary.n_direction_defined,
+        "distances": list(summary.distances),
+        "mean_distance": summary.mean_distance,
+        "median_distance": summary.median_distance,
+        "directional_agreement_rate": summary.directional_agreement_rate,
+    }
+
+
 def _report(name: str, rounds: list[RoundLog]) -> dict:
     n_total = len(rounds)
     n_valid = sum(1 for r in rounds if r.valid)
@@ -102,6 +131,16 @@ def _report(name: str, rounds: list[RoundLog]) -> dict:
     # diluted by round 1, where staleness is undefined by construction.
     # Reported alongside, never instead of, the primary.
     eb_summary = summarize(evidence_bearing(metrics))
+
+    # Estimation-error half of the RQ1/RQ2 decomposition (DESIGN.md §I.5,
+    # "belief-update consistency" -- distance + directional-correctness
+    # sub-measures; see metrics/belief_consistency.py). Computed from
+    # `rounds` directly, not from `metrics`/`decision_metrics`'s output --
+    # it needs RoundLog.belief and .observation.history, which the
+    # EV-realization DecisionMetric doesn't carry.
+    belief_metrics = belief_consistency_metrics(rounds)
+    belief_summary = summarize_belief_consistency(belief_metrics)
+    belief_eb_summary = summarize_belief_consistency(belief_evidence_bearing(belief_metrics))
 
     print(f"\n=== {name} ===")
     print(f"decision points: {n_total}  valid: {n_valid}  invalid: {n_total - n_valid}")
@@ -117,6 +156,16 @@ def _report(name: str, rounds: list[RoundLog]) -> dict:
         f"median={eb_summary.median_ratio}  mean regret={eb_summary.mean_regret}"
     )
     print(f"full ratio distribution: {sorted(summary.ratios)}")
+    print(
+        f"belief-consistency (estimation error): mean TV distance="
+        f"{belief_summary.mean_distance}  median={belief_summary.median_distance}  "
+        f"directional agreement rate={belief_summary.directional_agreement_rate}"
+    )
+    print(
+        f"  [evidence-bearing] mean distance={belief_eb_summary.mean_distance}  "
+        f"median={belief_eb_summary.median_distance}  "
+        f"directional agreement rate={belief_eb_summary.directional_agreement_rate}"
+    )
 
     return {
         "name": name,
@@ -125,6 +174,8 @@ def _report(name: str, rounds: list[RoundLog]) -> dict:
         "n_invalid": n_total - n_valid,
         "summary": _summary_to_dict(summary),
         "evidence_bearing_summary": _summary_to_dict(eb_summary),
+        "belief_consistency": _belief_summary_to_dict(belief_summary),
+        "belief_consistency_evidence_bearing": _belief_summary_to_dict(belief_eb_summary),
     }
 
 

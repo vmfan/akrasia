@@ -1,0 +1,98 @@
+{
+  "model": "gpt-5.5",
+  "binding": true,
+  "n_episodes": 8,
+  "horizon": 6,
+  "power_calc": {
+    "z_factor_sq": 7.849,
+    "sigma_between": 0.0956,
+    "delta": 0.05,
+    "n_coeff": 57.38786931199999,
+    "sigma_between_source": "GPT-5.5 evidence-bearing episode-mean EV-realization"
+  },
+  "arms": {
+    "baseline": {
+      "episode_mean_ev": [
+        0.8856992875890514,
+        0.982562225460217,
+        0.8991038028860532,
+        0.9433896813651789,
+        0.7328780455652187,
+        0.7744227853237418,
+        0.9537734764678258,
+        0.8493528983681182
+      ],
+      "cost": {
+        "n_rounds": 48,
+        "n_valid": 48,
+        "total_input_tokens": 48036,
+        "total_output_tokens": 2598,
+        "total_tokens": 50634,
+        "mean_input_tokens_per_round": 1000.75,
+        "mean_output_tokens_per_round": 54.125,
+        "mean_total_tokens_per_round": 1054.875,
+        "mean_latency_ms": 2007.9312699090224,
+        "median_latency_ms": 1829.5908541185781,
+        "mean_attempts": 1,
+        "mean_passes": 1
+      }
+    },
+    "c1c2": {
+      "episode_mean_ev": [
+        0.9677909279667277,
+        1.0,
+        0.8078182295649817,
+        1.0,
+        0.6897117272759657,
+        0.6065100905651437,
+        0.8705467319354898,
+        0.8723359172730138
+      ],
+      "cost": {
+        "n_rounds": 48,
+        "n_valid": 48,
+        "total_input_tokens": 138934,
+        "total_output_tokens": 5148,
+        "total_tokens": 144082,
+        "mean_input_tokens_per_round": 2894.4583333333335,
+        "mean_output_tokens_per_round": 107.25,
+        "mean_total_tokens_per_round": 3001.7083333333335,
+        "mean_latency_ms": 4096.340275068845,
+        "median_latency_ms": 3655.335270334035,
+        "mean_attempts": 2,
+        "mean_passes": 2
+      }
+    }
+  },
+  "pairing": {
+    "n_paired": 8,
+    "n_dropped": 0,
+    "baseline_paired": [
+      0.8856992875890514,
+      0.982562225460217,
+      0.8991038028860532,
+      0.9433896813651789,
+      0.7328780455652187,
+      0.7744227853237418,
+      0.9537734764678258,
+      0.8493528983681182
+    ],
+    "c1c2_paired": [
+      0.9677909279667277,
+      1.0,
+      0.8078182295649817,
+      1.0,
+      0.6897117272759657,
+      0.6065100905651437,
+      0.8705467319354898,
+      0.8723359172730138
+    ],
+    "rho": 0.8416765012179712,
+    "rho_undefined_reason": null,
+    "implied_N_at_measured_rho": 9.085848257121658,
+    "reference_N": {
+      "rho=0.0": 57.38786931199999,
+      "rho=0.5": 28.693934655999996
+    }
+  }
+}

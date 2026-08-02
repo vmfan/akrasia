@@ -1,5 +1,12 @@
 .DS_Store
 .secrets
-references/
+references/*
+!references/references.bib
 .mcp.json
 .claude/
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+report/latex/*.aux
+report/latex/*.log

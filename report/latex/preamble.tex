@@ -1,0 +1,49 @@
+% Extra preamble: Unicode characters used in the report body that plain
+% pdflatex + inputenc(utf8)/fontenc(T1) do not already cover.
+\DeclareUnicodeCharacter{0394}{\ensuremath{\Delta}}     % Δ
+\DeclareUnicodeCharacter{03C0}{\ensuremath{\pi}}        % π
+\DeclareUnicodeCharacter{03C1}{\ensuremath{\rho}}       % ρ
+\DeclareUnicodeCharacter{03C9}{\ensuremath{\omega}}     % ω
+\DeclareUnicodeCharacter{2191}{\ensuremath{\uparrow}}   % ↑
+\DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}% →
+\DeclareUnicodeCharacter{2193}{\ensuremath{\downarrow}} % ↓
+\DeclareUnicodeCharacter{2208}{\ensuremath{\in}}        % ∈
+\DeclareUnicodeCharacter{2212}{\ensuremath{-}}          % − (minus sign)
+\DeclareUnicodeCharacter{2213}{\ensuremath{\mp}}        % ∓
+\DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}    % ≈
+\DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}       % ≤
+\DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}       % ≥
+
+% Tables in the report are wider than the 1in-margin textwidth in places;
+% allow small tables to shrink to fit rather than overflow.
+\usepackage{adjustbox}
+
+% Long inline results/*.json paths in \texttt{} (Appendix C/D/E artifact
+% lists) have no natural break point; allow breaking at underscores/hyphens
+% so they wrap instead of overflowing the margin.
+\usepackage[htt]{hyphenat}
+
+% Long, evidence-heavy paragraphs run pages before the next figure; keep
+% figures near their reference point without forcing a hard float barrier.
+\usepackage{float}
+
+% [H] forces a figure to its exact source position even when it doesn't fit
+% on the current page, leaving a large blank gap instead of flowing text
+% around it. placeins' \FloatBarrier lets a figure float naturally ([htbp])
+% while still forbidding it from drifting past a given point (e.g. past its
+% own section), avoiding both the drift and the forced-gap failure modes.
+\usepackage{placeins}
+
+% Appendix A's verbatim prompt text has long lines; pandoc's fenced-code
+% Highlighting environment (fancyvrb Verbatim) doesn't wrap by default,
+% which overflows the page margin. Wrap and shrink it slightly instead.
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},breaklines=true,breakanywhere=true,fontsize=\small}
+
+% Bullets (e.g. the metric definitions in 3.4) often contain long inline
+% `code` spans -- pandoc renders their internal spaces as fixed-width \
+% control spaces, so the whole span is one unbreakable chunk near a full
+% line's width. Under full justification, LaTeX compensates by stretching
+% the few remaining breakable spaces on that line unevenly. Ragged-right
+% itemize lets the leftover space fall to the margin instead.
+\AtBeginEnvironment{itemize}{\raggedright}

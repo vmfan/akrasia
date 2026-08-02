@@ -1,0 +1,19 @@
+---
+title: "Diagnosing and Reducing the Reasoning-to-Execution Gap in LLM Sequential Decision Agents"
+author: |
+  Vincent Marciano Fan\
+  HKUST\
+  vmfan@connect.ust.hk
+date: ""
+documentclass: article
+fontsize: 11pt
+geometry: margin=1in
+colorlinks: true
+linkcolor: black
+citecolor: black
+urlcolor: black
+bibliography: references/references.bib
+citation-style: report/latex/numeric-bracket.csl
+abstract: |
+  LLM agents in sequential decision settings often fail at *doing*, not *knowing*: they can state a correct belief and still take an action that belief does not justify. Existing harness-reliability metrics cannot see this: they check whether an action was correct, not whether it was consistent with the agent's own stated reasoning, because realistic settings have no ground-truth optimal action to check against. We build a minimal repeated-pricing game small enough to admit an *exact* EV oracle, paired with same-pass belief elicitation, giving a two-oracle decomposition of failure into **estimation error** (Oracle B: is the stated belief close to the correct posterior?) and **execution error** (Oracle A: does the chosen action follow from the agent's own stated belief?). On a weak model (Llama 3.3 70B) both channels are severely broken (directional agreement 0.524, barely above chance; mean EV-realization ratio −0.369, 61% of decisions realize negative EV). Capability does not close the gap, but relocates it. The frontier model (GPT-5.5) has largely correct beliefs (TV distance 0.063, directional agreement 0.945) but still forfeits value on 66% of decisions relative to its own stated belief (mean ratio 0.893). We then test a no-training scaffold, an externalized belief-state carry plus a mandated re-evaluation step, against a token-matched control that isolates structure from reasoning budget. The scaffold does not close the gap either: on the frontier it *widens* the estimation-error axis, worst on the belief-carry component (TV 0.088 vs. 0.052 for the control), a mechanism we trace to double-counting of already-summarized evidence and confirm with a signed over-concentration fingerprint, replicated on an independent frontier model. A follow-up fix, replacing raw history with its lossless sufficient statistic, repairs the belief axis (lowest estimation error of any arm, both models) at *negative* token cost. But a composite true-model decision-quality metric shows this belief win is largely cosmetic on the frontier (all arms ≈0.93) and dissociates from decision quality on the weak model, where a different, cheap intervention (de-duplicated belief-carry) delivers the largest gain in the study (+0.224, 1.14 quality-points per 1K extra tokens) despite worse beliefs than the sufficient-statistic arm. The takeaway is that a validated instrument separating estimation from execution error is necessary to see that a plausible, cheap scaffold can degrade the axis it targets while leaving decisions unchanged, and that "better beliefs" and "better decisions" are not the same intervention.
+---

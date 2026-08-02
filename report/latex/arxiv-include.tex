@@ -1,0 +1,39 @@
+% Loaded after preamble.tex (and after pandoc's font setup) so that
+% arxiv.sty's Times/Helvetica font selection and its own \newgeometry
+% (set in \AtBeginDocument) win over pandoc's defaults.
+\usepackage{arxiv}
+
+% arxiv.sty itself sets \flushbottom, which combined with the template's
+% stretchy \parskip stretches interline space to fill short pages exactly,
+% producing large visible gaps above/below figures on pages with few
+% paragraphs (e.g. Figure 1 on a page ending right after a section break).
+% Override back to \raggedbottom so pages end short instead.
+\raggedbottom
+
+% arxiv.sty's default \shorttitle is the full \@title, which collides with
+% the right-aligned "A Preprint" running header for a title this long.
+\renewcommand{\shorttitle}{Reasoning-to-Execution Gap in LLM Agents}
+
+% body.md frequently nests a \subsection directly under a \section with no
+% lead-in paragraph between them (each section is a container for its
+% subsections). arxiv.sty's stock spacing (section after-skip 1.5ex,
+% subsection before-skip -1.8ex) is tuned for headings separated by body
+% text; back-to-back headings collapse into one visual blob under it. Widen
+% both so a section-then-subsection pair reads as two distinct breaks,
+% matching the whitespace in the upstream arxiv-style template.pdf.
+% \@startsection/\z@/\@plus/\@minus below need catcode-11 "@", which .sty
+% files get automatically but a plain --include-in-header snippet does not.
+\makeatletter
+\renewcommand{\section}{%
+  \@startsection{section}{1}{\z@}%
+                {-2.5ex \@plus -0.5ex \@minus -0.2ex}%
+                { 2.3ex \@plus  0.3ex \@minus  0.2ex}%
+                {\large\bf\raggedright}%
+}
+\renewcommand{\subsection}{%
+  \@startsection{subsection}{2}{\z@}%
+                {-3.0ex \@plus -0.5ex \@minus -0.2ex}%
+                { 1.0ex \@plus  0.2ex}%
+                {\normalsize\bf\raggedright}%
+}
+\makeatother

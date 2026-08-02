@@ -1,0 +1,25 @@
+%%{init: {'theme': 'neutral', 'flowchart': {'curve': 'linear'}}}%%
+flowchart LR
+    V["V drawn<br/>(hidden)"]:::hidden
+
+    subgraph ROUND["one round — × H = 6"]
+        direction LR
+        A[Arrival] --> B[State belief]
+        B --> C[Quote]
+        C --> D{Fill?}
+        D -->|yes| E[Trade]
+        D -->|no| F[No trade]
+        E --> G["Observe:<br/>buy/sell"]
+        F --> G2["Observe:<br/>none"]
+    end
+
+    T["V revealed"]:::terminal
+
+    V -.-> A
+    G --> A
+    G2 --> A
+    G --> T
+    G2 --> T
+
+    classDef hidden fill:#eee,stroke:#999,stroke-dasharray: 4 3,color:#555
+    classDef terminal fill:#dde8f5,stroke:#4a6fa5,color:#222

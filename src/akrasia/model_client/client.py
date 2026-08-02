@@ -1,5 +1,5 @@
 """Single OpenAI-compatible client backing all three backends (CLAUDE.md §6):
-GPT-5.5 on OpenAI direct, Llama 3.3 70B on Nebius Base, Llama 3.3 70B on the
+GPT-5.5 on OpenAI direct, Llama 3.3 70B on Nebius Token Factory, Llama 3.3 70B on the
 HKUST debug endpoint. All three are chat-completion style and OpenAI-compatible,
 so one implementation covers them via a ``base_url`` + ``api_key`` swap.
 
@@ -74,7 +74,7 @@ class ModelClient:
 
         kwargs: dict = dict(
             model=self._config.model,
-            temperature=0,
+            temperature=self._config.temperature,
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt},

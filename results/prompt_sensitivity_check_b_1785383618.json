@@ -1,0 +1,59 @@
+{
+  "cache_path": "results/prompt_sensitivity_cache.jsonl",
+  "n_episodes": 29,
+  "variant": "B",
+  "model": "gpt-5.5",
+  "cache_misses": 162,
+  "cache_hits": 12,
+  "estimated_cost_usd": 1.1425,
+  "all_rounds": {
+    "n_total": 174,
+    "spread": {
+      "n_total": 174,
+      "n_conservative": 9,
+      "n_matched": 90,
+      "n_aggressive": 75,
+      "signed_rate": -0.3793103448275862,
+      "n_suboptimal": 84,
+      "n_conservative_of_suboptimal": 9,
+      "n_aggressive_of_suboptimal": 75,
+      "signed_rate_of_suboptimal": -0.7857142857142857
+    },
+    "size": {
+      "n_total": 174,
+      "n_conservative": 53,
+      "n_matched": 71,
+      "n_aggressive": 50,
+      "signed_rate": 0.017241379310344827,
+      "n_suboptimal": 103,
+      "n_conservative_of_suboptimal": 53,
+      "n_aggressive_of_suboptimal": 50,
+      "signed_rate_of_suboptimal": 0.02912621359223301
+    }
+  },
+  "evidence_bearing": {
+    "n_total": 145,
+    "spread": {
+      "n_total": 145,
+      "n_conservative": 9,
+      "n_matched": 75,
+      "n_aggressive": 61,
+      "signed_rate": -0.3586206896551724,
+      "n_suboptimal": 70,
+      "n_conservative_of_suboptimal": 9,
+      "n_aggressive_of_suboptimal": 61,
+      "signed_rate_of_suboptimal": -0.7428571428571429
+    },
+    "size": {
+      "n_total": 145,
+      "n_conservative": 53,
+      "n_matched": 56,
+      "n_aggressive": 36,
+      "signed_rate": 0.11724137931034483,
+      "n_suboptimal": 89,
+      "n_conservative_of_suboptimal": 53,
+      "n_aggressive_of_suboptimal": 36,
+      "signed_rate_of_suboptimal": 0.19101123595505617
+    }
+  }
+}

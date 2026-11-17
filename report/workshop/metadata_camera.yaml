@@ -1,0 +1,18 @@
+---
+author: |
+  Vincent Marciano Fan\
+  HKUST\
+  vmfan@connect.ust.hk
+title: "Diagnosing the Stated-Belief-to-Action Gap in LLM Sequential Decision Agents"
+date: ""
+documentclass: article
+fontsize: 10pt
+colorlinks: true
+linkcolor: black
+citecolor: black
+urlcolor: black
+bibliography: references/references.bib
+citation-style: report/latex/numeric-bracket.csl
+abstract: |
+  LLM agents in sequential decision settings can state a largely correct belief and still act in a way that belief does not justify. Harness-reliability metrics cannot see this, because they check whether an action was correct, not whether it followed from the agent's own stated reasoning. We build a minimal repeated-pricing game small enough to admit an *exact* expected-value oracle, paired with same-pass belief elicitation, decomposing failure into **estimation error** (is the stated belief close to the correct posterior?) and **belief-conditioned regret** (how far is the chosen action from the optimum under the agent's *own* stated belief, with true fill mechanics held fixed?). On a weak model both channels are severely broken. The frontier model's beliefs are largely correct (TV distance 0.063), yet its action does not depend on them: at our frozen operating point (no hidden reasoning, temperature 0) GPT-5.5 plays the same quote on 99% of decisions across the seven arms, as does a second frontier model, while a paraphrased prompt or hidden reasoning changes the action. A no-training scaffold (a belief-state carry plus a mandated re-evaluation step), tested against an approximately token-matched control, does not close the gap: on the frontier it *widens* the estimation axis, worst on the carry component (TV 0.088 vs. 0.052 for the control). Removing the duplicated history leaves this harm on both frontier models, consistent with anchoring on the carried belief, but removes it on the weak model, where duplication drives it. Because frontier actions do not move under any arm, true-model decision quality is identical across arms (0.928) and the instrument has no power to detect an action effect there, a limitation we report. Separating estimation error from belief-conditioned regret is what makes it visible that a plausible, cheap scaffold can degrade the axis it targets while leaving decisions unchanged.
+---

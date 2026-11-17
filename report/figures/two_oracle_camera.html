@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- Camera-ready redraw of report/figures/two_oracle.mmd (results/fig_two_oracle.png, Jul 2026).
+     Same structure and neutral styling; only change: the Oracle A channel is labelled
+     "Belief-conditioned regret" (camera-ready term, body_camera.md §2.3) instead of the
+     superseded "Execution error". Rendered with headless Chrome to results/fig_two_oracle_camera.png. -->
+<html><head><meta charset="utf-8"><style>
+html,body{margin:0;background:#fff}
+svg{display:block;font-family:"Trebuchet MS",Verdana,Arial,sans-serif}
+.box{fill:#ececec;stroke:#d6d6d6;stroke-width:1}
+.sub{fill:#fafafa;stroke:#999;stroke-width:1}
+.bel{fill:#dde8f5;stroke:#4a6fa5;stroke-width:1}
+.err{fill:#f5dedd;stroke:#a5654a;stroke-width:1}
+.e{stroke:#666;stroke-width:1.2;fill:none;marker-end:url(#a)}
+text{font-size:15px;fill:#222;text-anchor:middle;dominant-baseline:middle}
+</style></head><body>
+<svg width="619" height="526" viewBox="0 0 619 526">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#666"/></marker></defs>
+<!-- top: stated belief -->
+<rect class="bel" x="233" y="8" width="168" height="74"/>
+<text x="317" y="34">Stated belief</text><text x="317" y="57">+ chosen action</text>
+<!-- edges from top -->
+<path class="e" d="M260 82 L155 108 L155 132"/>
+<path class="e" d="M375 82 L478 108 L478 132"/>
+<!-- Oracle B (left) -->
+<rect class="sub" x="8" y="134" width="295" height="255"/>
+<text x="155" y="146">Oracle B</text>
+<rect class="box" x="42" y="170" width="226" height="54"/><text x="155" y="197">Compute true posterior</text>
+<path class="e" d="M155 224 L155 296"/>
+<rect class="box" x="68" y="298" width="174" height="54"/><text x="155" y="325">vs. stated belief</text>
+<!-- Oracle A (right) -->
+<rect class="sub" x="353" y="134" width="250" height="255"/>
+<text x="478" y="146">Oracle A</text>
+<rect class="box" x="406" y="170" width="142" height="54"/><text x="478" y="197">Compute a*</text>
+<path class="e" d="M478 224 L478 296"/>
+<rect class="box" x="388" y="298" width="180" height="54"/><text x="478" y="325">vs. chosen action</text>
+<!-- error channels (two lines each, matching heights) -->
+<path class="e" d="M155 389 L155 436"/>
+<path class="e" d="M478 389 L478 436"/>
+<rect class="err" x="68" y="438" width="174" height="74"/><text x="155" y="464">Estimation</text><text x="155" y="487">error</text>
+<rect class="err" x="388" y="438" width="180" height="74"/><text x="478" y="464">Belief-conditioned</text><text x="478" y="487">regret</text>
+</svg></body></html>

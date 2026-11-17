@@ -442,3 +442,25 @@ Implemented exactly in `src/akrasia/scaffold/n_gate.py::decide_extend` (stdlib e
 ---
 
 **Next decision point:** Lock N (episodes/decision points per condition) before the frontier ablation runs.
+
+## Post-Freeze Analysis Addition — Mechanism Contrasts for the Camera-Ready (2026-11-15)
+
+**What and why.** The workshop meta-review asked for episode-clustered CIs
+and unrounded values, and for a mechanism label (double-counting vs. anchoring)
+that the existing fingerprint output cannot settle: the entropy-gap slope does
+not distinguish duplicated evidence from anchoring on a carried belief. C3b
+(carry kept, duplication removed) is the discriminating arm, but only
+per-arm slopes and TV were reported, not C3b-vs-C1 and C3b-vs-control contrasts.
+
+**Pure addition, same precedent as the belief-consistency metric above.**
+`scaffold/mechanism_contrasts.py` (new file) is zero-API: it replays the
+existing caches through `belief_fingerprint._collect_model` (`_NoCallClient` +
+`CachingModelClient`, so any cache miss raises). It edits no oracle, sim,
+metric, elicitation or base-prompt file and changes no previously computed
+result. It adds episode-paired bootstrap contrasts (slope and mean TV) and
+unrounded per-arm TV with episode-clustered CIs. n=29, 2000 resamples, seed 7000.
+
+**Not done, by decision.** No Oracle B variant under a marginalized arrival
+rate: it needs a prior over ω that the frozen design does not contain. A
+stated-ω Oracle B variant is a possible supplement, not a replacement for the
+frozen Oracle B, and is logged separately if built.
